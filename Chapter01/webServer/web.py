@@ -2,14 +2,14 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import time
 
 hostName = "localhost"
-serverPort = 8080
+serverPort = 8181
 
 class MyServer(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(bytes("Hello World", "utf-8"))
+        self.wfile.write(bytes("Hello from Python!", "utf-8"))
     def log_message(self, format, *args):
         return
 

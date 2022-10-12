@@ -1,11 +1,11 @@
 require 'socket'
 
 server_thread = Thread.start do
-  server = TCPServer.new('localhost', 8080)
+  server = TCPServer.new('localhost', 8181)
   loop do
     Thread.start(server.accept) do |socket|
         request = socket.gets
-        response = "Hello World!\n"
+        response = "Hello from Ruby!\n"
 
         socket.print "HTTP/1.1 200 OK\r\n" +
                       "Content-Type: text/plain\r\n" +

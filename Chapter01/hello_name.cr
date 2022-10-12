@@ -1,5 +1,5 @@
 def get_name
-  print "What's your name? "
+  print "What is your name? "
   read_line
 end
 

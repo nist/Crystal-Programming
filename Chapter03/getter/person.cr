@@ -3,6 +3,5 @@ class Person
     @name = name
   end
 
-  getter name
-  setter name
+  property name
 end

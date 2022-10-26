@@ -1,13 +1,27 @@
+require "./yaml"
+
 module Transform
-  VERSION = "0.1.0"
+  VERSION    = "0.1.0"
+  INPUT_DATA = <<-YAML
+  ---
+  - id: 1
+    author:
+      name: Jim
+  - id: 2
+    author:
+      name: Bob
+  YAML
 
-  # The same input data used in the example at the beginning of the chapter.
-  INPUT_DATA = %([{"id":1,"author":{"name":"Jim"}},{"id":2,"author":{"name":"Bob"}}])
+  output_data = String.build do |str|
+    Process.run(
+      "jq",
+      [%([.[] | {"id": (.id + 1), "name": .author.name}])],
+      input: IO::Memory.new(
+        Transform::YAML.deserialize(INPUT_DATA)
+      ),
+      output: str
+    )
+  end
 
-  Process.run(
-    "jq",
-    [%([.[] | {"id": (.id + 1), "name": .author.name}])],
-    input: IO::Memory.new(INPUT_DATA),
-    output: :inherit
-  )
+  puts Transform::YAML.serialize(output_data)
 end

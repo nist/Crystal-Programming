@@ -4,6 +4,10 @@ version: 0.1.0
 authors:
   - Nicolas St-Laurent <stlaurent.nicolas@gmail.com>
 
-crystal: 1.7.0-dev
+crystal: 1.6.0
+
+targets:
+  transform:
+    main: src/transform_cli.cr
 
 license: MIT

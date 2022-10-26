@@ -1,5 +1,5 @@
 require "spec"
-require "../transform"
+require "../src/transform"
 
 describe "Transform" do
   pending "Process" do

@@ -1,0 +1,9 @@
+name: transform
+version: 0.1.0
+
+authors:
+  - Nicolas St-Laurent <stlaurent.nicolas@gmail.com>
+
+crystal: 1.7.0-dev
+
+license: MIT

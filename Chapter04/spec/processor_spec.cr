@@ -1,5 +1,5 @@
 require "spec"
-require "../processor"
+require "../src/processor"
 
 describe "Transform::Processor" do
   pending ".process" do

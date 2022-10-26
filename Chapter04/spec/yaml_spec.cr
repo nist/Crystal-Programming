@@ -1,5 +1,5 @@
 require "spec"
-require "../yaml"
+require "../src/yaml"
 
 describe "Transform::YAML.deserialize" do
   pending "should deserialize valid yaml" do

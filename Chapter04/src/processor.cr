@@ -1,3 +1,5 @@
+require "./yaml"
+
 class Transform::Processor
   def process(input : String) : String
     output_data = String.build do |str|

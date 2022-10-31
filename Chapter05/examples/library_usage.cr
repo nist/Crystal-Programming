@@ -1,5 +1,5 @@
 require "http/client"
-require "transform"
+require "../src/transform"
 
 private FILTER = %({"name": .info.title, "swagger_version": .swagger, "endpoints": .paths | keys})
 
